@@ -1,1 +1,12 @@
-{}
+{
+    "meta":{
+        "project":"ru.foodtechlab.es.order.service",
+        "domain":"order",
+        "useCaseTitle":"CompleteDeliveryOrderUseCase"
+    },
+    "values":{
+        "output":"OrderEntity",
+        "outputVar":"orderEntity",
+        "description":"Завершение доставки заказа"
+    }
+}

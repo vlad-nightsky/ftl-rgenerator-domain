@@ -1,41 +1,28 @@
-package ru.foodtechlab.es.order.service.core.domain.order.usecases;
+package {{meta.project}}.domain.{{meta.domain}}.usecases;
 
 import com.rcore.domain.commons.usecase.UseCase;
 import com.rcore.domain.commons.usecase.model.SingletonEntityOutputValues;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import ru.foodtechlab.es.order.service.core.domain.order.entity.OrderEntity;
-import ru.foodtechlab.es.order.service.core.domain.order.events.output.OrderDeliveryCompletedEvent;
-import ru.foodtechlab.es.order.service.core.domain.order.exceptions.OrderNotFoundException;
-import ru.foodtechlab.es.order.service.core.domain.order.port.OrderRepository;
-import ru.foodtechlab.fdelivery.core.domain.commons.events.EventDispatcher;
+import {{meta.project}}.domain.{{meta.domain}}.entity.{{values.output}};
 
 /**
  * Завершение доставки заказа
  */
 @RequiredArgsConstructor
-public class CompleteDeliveryOrderUseCase extends UseCase<CompleteDeliveryOrderUseCase.InputValues, SingletonEntityOutputValues<OrderEntity>> {
-
-    private final OrderRepository orderRepository;
-    private final EventDispatcher eventDispatcher;
+public class {{values.useCaseTitle}} extends UseCase<{{values.useCaseTitle}}.InputValues, SingletonEntityOutputValues<{{values.output}}>> {
 
     @Override
-    public SingletonEntityOutputValues<OrderEntity> execute(InputValues inputValues) {
-        OrderEntity orderEntity = orderRepository.findById(inputValues.getId())
-                .orElseThrow(OrderNotFoundException::new);
-        orderEntity.completeDelivery();
-        orderRepository.save(orderEntity);
+    public SingletonEntityOutputValues<{{values.output}}> execute(InputValues inputValues) {
+        {{values.output}} {{values.outputVar}};
 
-        eventDispatcher.dispatch(OrderDeliveryCompletedEvent.of(orderEntity.getId()));
-
-        return SingletonEntityOutputValues.of(orderEntity);
+        return SingletonEntityOutputValues.of({{values.outputVar}});
     }
 
     @AllArgsConstructor(staticName = "of")
     @Getter
     public static class InputValues implements UseCase.InputValues {
-        private String id;
     }
 
 }
