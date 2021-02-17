@@ -1,4 +1,4 @@
-package ru.foodtechlab.es.{{meta.nameLowCase}}.service.domain.{{meta.nameLowCase}}.port.filters;
+package {{meta.package}}.domain.{{meta.domainLow}}.port.filters;
 
 import com.rcore.domain.commons.port.dto.SearchFilters;
 import lombok.AllArgsConstructor;
@@ -12,6 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @SuperBuilder
 @Data
-public class {{meta.nameUpperCase}}Filters extends SearchFilters {
+public class {{meta.domainUp}}Filters extends SearchFilters {
    
 }

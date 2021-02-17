@@ -1,6 +1,7 @@
 {
     "meta":{
-        "nameUpperCase":"Order",
-        "nameLowCase":"order"
+        "package":"ru.foodtechlab.es.order.service",
+        "domainUp":"Order",
+        "domainLow":"order"
     }
 }

@@ -1,4 +1,4 @@
-package ru.foodtechlab.es.{{meta.nameLowCase}}.service.core.domain.{{meta.nameLowCase}}.entity;
+package {{meta.package}}.domain.{{meta.domainLow}}.entity;
 
 import com.rcore.domain.commons.entity.BaseEntity;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 @SuperBuilder
 @Data
-public class {{meta.nameLowCase}}Entity extends BaseEntity {
+public class {{meta.domainUp}}Entity extends BaseEntity {
 
     /**
      * Идентификатор 
