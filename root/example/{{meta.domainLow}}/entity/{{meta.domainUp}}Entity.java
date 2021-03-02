@@ -20,6 +20,11 @@ import java.util.List;
 @Data
 public class {{meta.domainUp}}Entity extends BaseEntity {
 
+    /**
+     * Идентификатор сущности
+     */
+    protected String id;
+    
     {{#entity.fields}}
     /**
      * {{accessModifier}} 

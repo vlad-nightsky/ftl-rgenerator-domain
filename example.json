@@ -7,8 +7,8 @@
     "entity":{
         "description":"Описание сущности, если требуется",
         "fields":[
-            {"type":"String", "name":"id", "accessModifier":"protected", "description": "Идентификатор"},
-            {"type":"String", "name":"title", "accessModifier":"protected", "description": "Заголовок"}
+            {"type":"String", "name":"number", "nameUperCase":"Number", "accessModifier":"protected", "description": "Номер"},
+            {"type":"String", "name":"title", "nameUperCase":"Title", "accessModifier":"protected", "description": "Заголовок"}
         ]
     }
 }

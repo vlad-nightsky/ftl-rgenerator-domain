@@ -31,6 +31,9 @@ public class Create{{meta.domainUp}}UseCase extends AbstractCreateUseCase<{{meta
         {{meta.domainUp}}Entity {{meta.domainLow}}Entity = new {{meta.domainUp}}Entity(idGenerator.generate());
        
         // Происходит заполнение всех полей 
+        {{#entity.fields}}
+        {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.get{{nameUperCase}}());
+        {{/entity.fields}}
 
         {{meta.domainLow}}Entity = repository.save({{meta.domainLow}}Entity);
 
@@ -43,6 +46,10 @@ public class Create{{meta.domainUp}}UseCase extends AbstractCreateUseCase<{{meta
     @Data
     public static class InputValues implements UseCase.InputValues {
         // перечисление полей необходимых для создания сущности
+        {{#entity.fields}}
+        {{accessModifier}} {{type}} {{name}};
+        {{/entity.fields}}
+
     }
 
     /**

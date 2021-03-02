@@ -24,6 +24,9 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
                 .orElseThrow({{meta.domainUp}}NotFoundException::new);
 
         // Тут изменение данных
+        {{#entity.fields}}
+        {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.get{{nameUperCase}}());
+        {{/entity.fields}}
         
         {{meta.domainLow}}Entity = {{meta.domainLow}}Repository.save({{meta.domainLow}}Entity);
 
@@ -33,8 +36,10 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
     @AllArgsConstructor(staticName = "of")
     @Getter
     public static class InputValues implements UseCase.InputValues {
-        private String id;
         //указываются данные которые необходимо изменить
+        {{#entity.fields}}
+        {{accessModifier}} {{type}} {{name}};
+        {{/entity.fields}}
     }
 
 }
