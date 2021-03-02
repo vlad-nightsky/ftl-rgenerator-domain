@@ -7,9 +7,6 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * {{entity.description}}
  */
@@ -19,6 +16,9 @@ import java.util.List;
 @SuperBuilder
 @Data
 public class {{meta.domainUp}}Entity extends BaseEntity {
+
+    /************************************ Fields ************************************/
+
 
     /**
      * Идентификатор сущности
@@ -31,6 +31,14 @@ public class {{meta.domainUp}}Entity extends BaseEntity {
      */
     {{accessModifier}} {{type}} {{name}};
     {{/entity.fields}}
+
+    /************************************ Constructors ************************************/
+
+    public {{meta.domainUp}}Entity(String id) {
+
+        this.id = id;
+
+    }
 
     /************************************ Methods ************************************/
 
