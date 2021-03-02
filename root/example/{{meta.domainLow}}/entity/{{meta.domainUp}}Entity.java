@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Сущность 
+ * {{#entity.description}}
  */
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
@@ -20,12 +20,12 @@ import java.util.List;
 @Data
 public class {{meta.domainUp}}Entity extends BaseEntity {
 
-    {{#fields}}
+    {{#entity.fields}}
     /**
      * {{accessModifier}} 
      */
     {{accessModifier}} {{type}} {{name}};
-    {{/fields}}
+    {{/entity.fields}}
 
     /************************************ Methods ************************************/
 
