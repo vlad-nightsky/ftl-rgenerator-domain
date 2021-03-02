@@ -1,6 +1,12 @@
 package {{meta.package}}.domain.{{meta.domainLow}}.config;
 
 import lombok.AllArgsConstructor;
+import {{meta.package}}.domain.{{meta.domainLow}}.port.CustomerIdGenerator;
+import {{meta.package}}.domain.{{meta.domainLow}}.port.CustomerRepository;
+import {{meta.package}}.domain.{{meta.domainLow}}.usecases.CreateCustomerUseCase;
+import {{meta.package}}.domain.{{meta.domainLow}}.usecases.DeleteCustomerUseCase;
+import {{meta.package}}.domain.{{meta.domainLow}}.usecases.FindCustomerByIdUseCase;
+import {{meta.package}}.domain.{{meta.domainLow}}.usecases.UpdateCustomerUseCase;
 
 @AllArgsConstructor
 public class {{meta.domainUp}}Config {
