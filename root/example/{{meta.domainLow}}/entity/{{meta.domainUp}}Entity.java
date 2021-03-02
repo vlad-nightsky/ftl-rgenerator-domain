@@ -20,10 +20,12 @@ import java.util.List;
 @Data
 public class {{meta.domainUp}}Entity extends BaseEntity {
 
+    {{#fields}}
     /**
-     * Идентификатор 
+     * {{accessModifier}} 
      */
-    protected String id;
+    {{accessModifier}} {{type}} {{name}};
+    {{/fields}}
 
     /************************************ Methods ************************************/
 

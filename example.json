@@ -3,5 +3,12 @@
         "package":"ru.foodtechlab.es.order.service",
         "domainUp":"Order",
         "domainLow":"order"
+    },
+    "entity":{
+        "description":"Описание сущности, если требуется",
+        "fields":[
+            {"type":"String", "name":"id", "accessModifier":"protected", "description": "Идентификатор"},
+            {"type":"String", "name":"title", "accessModifier":"protected", "description": "Заголовок"}
+        ]
     }
 }
