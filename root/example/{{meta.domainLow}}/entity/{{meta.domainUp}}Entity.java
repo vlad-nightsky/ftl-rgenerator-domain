@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * {{#entity.description}}
+ * {{entity.description}}
  */
 @EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
