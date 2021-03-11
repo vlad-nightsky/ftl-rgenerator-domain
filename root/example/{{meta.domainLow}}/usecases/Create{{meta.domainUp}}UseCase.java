@@ -11,8 +11,6 @@ import {{meta.package}}.domain.{{meta.domainLow}}.entity.*;
 import {{meta.package}}.domain.{{meta.domainLow}}.port.{{meta.domainUp}}IdGenerator;
 import {{meta.package}}.domain.{{meta.domainLow}}.port.{{meta.domainUp}}Repository;
 
-import java.util.List;
-
 /**
  * Создание сущности
  */

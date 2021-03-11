@@ -3,8 +3,6 @@ package {{meta.package}}.domain.{{meta.domainLow}}.usecases;
 import com.rcore.domain.commons.usecase.AbstractDeleteUseCase;
 import {{meta.package}}.domain.{{meta.domainLow}}.port.{{meta.domainUp}}Repository;
 
-import java.util.List;
-
 /**
  * Удаление сущности
  */
