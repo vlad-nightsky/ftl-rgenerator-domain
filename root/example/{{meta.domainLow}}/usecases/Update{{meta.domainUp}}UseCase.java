@@ -25,7 +25,7 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
 
         // Тут изменение данных
         {{#entity.fields}}
-        {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.get{{nameUperCase}}());
+        {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.{{name}});
         {{/entity.fields}}
         
         {{meta.domainLow}}Entity = {{meta.domainLow}}Repository.save({{meta.domainLow}}Entity);

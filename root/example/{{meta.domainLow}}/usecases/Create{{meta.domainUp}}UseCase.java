@@ -30,7 +30,7 @@ public class Create{{meta.domainUp}}UseCase extends AbstractCreateUseCase<{{meta
        
         // Происходит заполнение всех полей 
         {{#entity.fields}}
-        {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.get{{nameUperCase}}());
+        {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.{{name}});
         {{/entity.fields}}
 
         {{meta.domainLow}}Entity = repository.save({{meta.domainLow}}Entity);
