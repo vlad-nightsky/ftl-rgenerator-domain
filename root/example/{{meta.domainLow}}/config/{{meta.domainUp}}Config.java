@@ -1,35 +1,26 @@
 package {{meta.package}}.domain.{{meta.domainLow}}.config;
 
-import lombok.AllArgsConstructor;
-import {{meta.package}}.domain.{{meta.domainLow}}.port.{{meta.domainUp}IdGenerator;
-import {{meta.package}}.domain.{{meta.domainLow}}.port.{{meta.domainUp}Repository;
-import {{meta.package}}.domain.{{meta.domainLow}}.usecases.Create{{meta.domainUp}UseCase;
-import {{meta.package}}.domain.{{meta.domainLow}}.usecases.Delete{{meta.domainUp}UseCase;
-import {{meta.package}}.domain.{{meta.domainLow}}.usecases.Find{{meta.domainUp}ByIdUseCase;
-import {{meta.package}}.domain.{{meta.domainLow}}.usecases.Update{{meta.domainUp}UseCase;
+import lombok.Getter;
+import lombok.experimental.Accessors;
+import {{meta.package}}.domain.{{meta.domainLow}}.port.{{meta.domainUp}}IdGenerator;
+import {{meta.package}}.domain.{{meta.domainLow}}.port.{{meta.domainUp}}Repository;
+import {{meta.package}}.domain.{{meta.domainLow}}.usecases.Create{{meta.domainUp}}UseCase;
+import {{meta.package}}.domain.{{meta.domainLow}}.usecases.Delete{{meta.domainUp}}UseCase;
+import {{meta.package}}.domain.{{meta.domainLow}}.usecases.Find{{meta.domainUp}}ByIdUseCase;
+import {{meta.package}}.domain.{{meta.domainLow}}.usecases.Update{{meta.domainUp}}UseCase;
 
-@AllArgsConstructor
+@Accessors(fluent = true)
+@Getter
 public class {{meta.domainUp}}Config {
-    private final {{meta.domainUp}}Repository {{meta.domainLow}}Repository;
-    private final {{meta.domainUp}}IdGenerator {{meta.domainLow}}IdGenerator;
+    private final Create{{meta.domainUp}}UseCase create{{meta.domainUp}}UseCase;
+    private final Delete{{meta.domainUp}}UseCase delete{{meta.domainUp}}UseCase;
+    private final Find{{meta.domainUp}}ByIdUseCase find{{meta.domainUp}}ByIdUseCase;
+    private final Update{{meta.domainUp}}UseCase update{{meta.domainUp}}UseCase;
 
-    public Create{{meta.domainUp}}UseCase create{{meta.domainUp}}UseCase() {
-        return new Create{{meta.domainUp}}UseCase({{meta.domainLow}}Repository, {{meta.domainLow}}IdGenerator);
-    }
-
-    public Find{{meta.domainUp}}ByIdUseCase find{{meta.domainUp}}ByIdUseCase() {
-        return new Find{{meta.domainUp}}ByIdUseCase({{meta.domainLow}}Repository);
-    }
-
-    public Delete{{meta.domainUp}}UseCase find{{meta.domainUp}}UseCase() {
-        return new Delete{{meta.domainUp}}UseCase({{meta.domainLow}}Repository);
-    }
-
-    public Update{{meta.domainUp}}UseCase update{{meta.domainUp}}UseCase() {
-        return new Update{{meta.domainUp}}UseCase({{meta.domainLow}}Repository);
-    }
-
-    public {{meta.domainUp}}UseCase {{meta.domainLow}}UseCase() {
-        return new {{meta.domainUp}}UseCase({{meta.domainLow}}Repository);
+    public {{meta.domainUp}}Config({{meta.domainUp}}Repository {{meta.domainLow}}Repository, {{meta.domainUp}}IdGenerator<?> {{meta.domainLow}}IdGenerator) {
+        this.create{{meta.domainUp}}UseCase = new Create{{meta.domainUp}}UseCase({{meta.domainLow}}Repository, {{meta.domainLow}}IdGenerator);
+        this.delete{{meta.domainUp}}UseCase = new Delete{{meta.domainUp}}UseCase({{meta.domainLow}}Repository);
+        this.find{{meta.domainUp}}ByIdUseCase = new Find{{meta.domainUp}}ByIdUseCase({{meta.domainLow}}Repository);
+        this.update{{meta.domainUp}}UseCase = new Update{{meta.domainUp}}UseCase({{meta.domainLow}}Repository, this);
     }
 }
