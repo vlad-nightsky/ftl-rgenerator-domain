@@ -21,6 +21,6 @@ public class {{meta.domainUp}}Config {
         this.create{{meta.domainUp}}UseCase = new Create{{meta.domainUp}}UseCase({{meta.domainLow}}Repository, {{meta.domainLow}}IdGenerator);
         this.delete{{meta.domainUp}}UseCase = new Delete{{meta.domainUp}}UseCase({{meta.domainLow}}Repository);
         this.find{{meta.domainUp}}ByIdUseCase = new Find{{meta.domainUp}}ByIdUseCase({{meta.domainLow}}Repository);
-        this.update{{meta.domainUp}}UseCase = new Update{{meta.domainUp}}UseCase({{meta.domainLow}}Repository, this);
+        this.update{{meta.domainUp}}UseCase = new Update{{meta.domainUp}}UseCase({{meta.domainLow}}Repository);
     }
 }
