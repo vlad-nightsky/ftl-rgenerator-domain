@@ -19,11 +19,6 @@ public class {{meta.domainUp}}Entity extends BaseEntity {
 
     /************************************ Fields ************************************/
 
-    /**
-     * Идентификатор сущности
-     */
-    protected String id;
-
     {{#entity.fields}}
     /**
      * {{description}} 
