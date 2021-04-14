@@ -1,14 +1,26 @@
 {
-    "meta":{
-        "package":"ru.foodtechlab.es.order.service",
-        "domainUp":"Order",
-        "domainLow":"order"
+    "meta": {
+        "package": "ru.foodtechlab.es.order.service",
+        "domainUp": "Order",
+        "domainLow": "order"
     },
-    "entity":{
-        "description":"Описание сущности, если требуется",
-        "fields":[
-            {"type":"String", "name":"number", "nameUperCase":"Number", "accessModifier":"protected", "description": "Номер"},
-            {"type":"String", "name":"title", "nameUperCase":"Title", "accessModifier":"protected", "description": "Заголовок"}
+    "entity": {
+        "description": "Описание сущности, если требуется",
+        "fields": [
+            {
+                "type": "String",
+                "name": "number",
+                "nameUperCase": "Number",
+                "accessModifier": "protected",
+                "description": "Номер"
+            },
+            {
+                "type": "String",
+                "name": "title",
+                "nameUperCase": "Title",
+                "accessModifier": "protected",
+                "description": "Заголовок"
+            }
         ]
     }
 }
