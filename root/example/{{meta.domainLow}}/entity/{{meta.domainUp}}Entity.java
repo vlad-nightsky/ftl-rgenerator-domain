@@ -17,7 +17,7 @@ import lombok.experimental.SuperBuilder;
 @Data
 public class {{meta.domainUp}}Entity extends BaseEntity {
 
-    /************************************ Fields ************************************/
+    /* *********************************** Fields *********************************** */
 
     {{#entity.fields}}
     /**
@@ -26,15 +26,9 @@ public class {{meta.domainUp}}Entity extends BaseEntity {
     {{accessModifier}} {{type}} {{name}};
     {{/entity.fields}}
 
-    /************************************ Constructors ************************************/
+    /* *********************************** Constructors *********************************** */
 
     public {{meta.domainUp}}Entity(String id) {
-
         this.id = id;
-
     }
-
-    /************************************ Methods ************************************/
-
-
 }

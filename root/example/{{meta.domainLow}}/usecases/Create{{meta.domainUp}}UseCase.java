@@ -52,7 +52,7 @@ public class Create{{meta.domainUp}}UseCase extends AbstractCreateUseCase<{{meta
 
     /**
      * Валидация входящий данных
-     * @param inputValues
+     * @param inputValues входные данные
      */
     private void validate(InputValues inputValues) {
 
