@@ -14,7 +14,7 @@ import {{meta.package}}.domain.{{meta.domainLow}}.port.{{meta.domainUp}}Reposito
 /**
  * Создание сущности
  */
-public class Create{{meta.domainUp}}UseCase extends AbstractCreateUseCase<{{meta.domainUp}}Entity, {{meta.domainUp}}IdGenerator, {{meta.domainUp}}Repository, Create{{meta.domainUp}}UseCase.InputValues> {
+public class Create{{meta.domainUp}}UseCase extends AbstractCreateUseCase<{{meta.domainUp}}Entity, {{meta.domainUp}}IdGenerator<?>, {{meta.domainUp}}Repository, Create{{meta.domainUp}}UseCase.InputValues> {
 
 
     public Create{{meta.domainUp}}UseCase({{meta.domainUp}}Repository repository, {{meta.domainUp}}IdGenerator idGenerator) {
