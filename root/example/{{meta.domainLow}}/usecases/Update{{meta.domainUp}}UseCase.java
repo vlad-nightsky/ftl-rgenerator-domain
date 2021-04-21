@@ -35,6 +35,7 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
 
     @AllArgsConstructor(staticName = "of")
     @Getter
+    @Builder
     public static class InputValues implements UseCase.InputValues {
         //Сущность которую требуется обновить
         protected String id;
