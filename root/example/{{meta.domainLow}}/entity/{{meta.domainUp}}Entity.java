@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @SuperBuilder
 @Data
-public class {{meta.domainUp}}Entity extends BaseEntity {
+public class {{meta.domainUp}}Entity extends BaseEntity<String> {
 
     /* *********************************** Fields *********************************** */
 
