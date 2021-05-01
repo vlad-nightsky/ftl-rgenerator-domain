@@ -24,8 +24,11 @@ public class Create{{meta.domainUp}}UseCase extends AbstractCreateUseCase<{{meta
     @Override
     public SingletonEntityOutputValues<{{meta.domainUp}}Entity> execute(InputValues inputValues) {
 
+        validate(inputValues);
+
         {{meta.domainUp}}Entity {{meta.domainLow}}Entity = new {{meta.domainUp}}Entity(idGenerator.generate());
        
+        // Происходит заполнение всех полей 
         {{#entity.fields}}
         {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.{{name}});
         {{/entity.fields}}
@@ -35,14 +38,24 @@ public class Create{{meta.domainUp}}UseCase extends AbstractCreateUseCase<{{meta
         return SingletonEntityOutputValues.of({{meta.domainLow}}Entity);
     }
 
-    @AllArgsConstructor(staticName = "of")
-    @NoArgsConstructor(staticName = "empty")
+    @AllArgsConstructor
+    @NoArgsConstructor
     @Builder
     @Data
     public static class InputValues implements UseCase.InputValues {
+        // перечисление полей необходимых для создания сущности
         {{#entity.fields}}
         {{accessModifier}} {{type}} {{name}};
         {{/entity.fields}}
 
     }
+
+    /**
+     * Валидация входящий данных
+     * @param inputValues входные данные
+     */
+    private void validate(InputValues inputValues) {
+
+    }
+
 }

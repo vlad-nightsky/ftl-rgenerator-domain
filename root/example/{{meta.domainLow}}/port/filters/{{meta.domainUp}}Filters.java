@@ -11,4 +11,5 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Data
 public class {{meta.domainUp}}Filters extends SearchFilters {
+   
 }

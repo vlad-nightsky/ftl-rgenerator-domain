@@ -2,19 +2,12 @@ package {{meta.package}}.domain.{{meta.domainLow}}.usecases;
 
 import com.rcore.domain.commons.usecase.UseCase;
 import com.rcore.domain.commons.usecase.model.SingletonEntityOutputValues;
-import lombok.Builder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import {{meta.package}}.domain.{{meta.domainLow}}.entity.{{meta.domainUp}}Entity;
 import {{meta.package}}.domain.{{meta.domainLow}}.exceptions.{{meta.domainUp}}NotFoundException;
-import {{meta.package}}.domain.{{meta.domainLow}}.exceptions.{{meta.domainUp}}ParamMissingException;
 import {{meta.package}}.domain.{{meta.domainLow}}.port.{{meta.domainUp}}Repository;
-
-import javax.validation.constraints.NotBlank;
-import java.util.List;
-import java.util.stream.Collectors;
-
 
 /**
  * Обновление сущности
@@ -30,6 +23,7 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
         {{meta.domainUp}}Entity {{meta.domainLow}}Entity = {{meta.domainLow}}Repository.findById(inputValues.getId())
                 .orElseThrow({{meta.domainUp}}NotFoundException::new);
 
+        // Тут изменение данных
         {{#entity.fields}}
         {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.{{name}});
         {{/entity.fields}}
@@ -40,22 +34,16 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
     }
 
     @AllArgsConstructor(staticName = "of")
-    @NoArgsConstructor(staticName = "empty")
     @Getter
     @Builder
     public static class InputValues implements UseCase.InputValues {
-        @NotBlank
+        //Сущность которую требуется обновить
         protected String id;
+
+        //указываются данные которые необходимо изменить
         {{#entity.fields}}
         {{accessModifier}} {{type}} {{name}};
         {{/entity.fields}}
-       
-        @Override
-        public void validate() {
-            List<String> badParams = validator.validate(this).stream().map(error -> error.getPropertyPath().toString()).collect(Collectors.toList());
-
-            if (!badParams.isEmpty())
-                throw new {{meta.domainUp}}ParamMissingException(badParams);
-        } 
     }
+
 }
