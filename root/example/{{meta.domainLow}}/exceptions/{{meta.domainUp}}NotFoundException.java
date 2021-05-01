@@ -1,8 +1,6 @@
 package {{meta.package}}.domain.{{meta.domainLow}}.exceptions;
 
-import com.rcore.domain.commons.exception.DomainException;
-
-public class {{meta.domainUp}}NotFoundException extends DomainException {
+public class {{meta.domainUp}}NotFoundException extends {{meta.domainUp}}DomainException {
 
     public {{meta.domainUp}}NotFoundException() {
         super("{{meta.domainUp}} not found");

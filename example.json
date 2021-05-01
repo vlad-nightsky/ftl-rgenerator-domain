@@ -2,7 +2,8 @@
     "meta": {
         "package": "ru.foodtechlab.es.order.service",
         "domainUp": "Order",
-        "domainLow": "order"
+        "domainLow": "order",
+        "error": "Order"
     },
     "entity": {
         "description": "Описание сущности, если требуется",
