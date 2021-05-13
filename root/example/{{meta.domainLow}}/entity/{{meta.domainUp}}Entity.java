@@ -30,7 +30,7 @@ public class {{meta.domainUp}}Entity extends BaseEntity<String> {
         this.id = id;
     }
 
-    {{#innerClases}}
+    {{#entity.innerClases}}
     @Builder
     @Getter
     @Setter
@@ -42,5 +42,5 @@ public class {{meta.domainUp}}Entity extends BaseEntity<String> {
         {{accessModifier}} {{type}} {{name}};
         {{/entity.fields}}
     }
-    {{/innerClases}}
+    {{/entity.innerClases}}
 }
