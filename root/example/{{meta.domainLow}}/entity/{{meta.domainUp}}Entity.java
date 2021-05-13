@@ -1,10 +1,7 @@
 package {{meta.package}}.domain.{{meta.domainLow}}.entity;
 
 import com.rcore.domain.commons.entity.BaseEntity;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 /**
@@ -35,12 +32,12 @@ public class {{meta.domainUp}}Entity extends BaseEntity<String> {
     @Getter
     @Setter
     public static class {{name}}{
-        {{#entity.fields}}
+        {{#fields}}
         /**
         * {{description}} 
         */
         {{accessModifier}} {{type}} {{name}};
-        {{/entity.fields}}
+        {{/fields}}
     }
     {{/entity.innerClases}}
 }

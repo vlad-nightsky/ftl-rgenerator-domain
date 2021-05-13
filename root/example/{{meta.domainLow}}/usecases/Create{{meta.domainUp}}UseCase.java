@@ -27,8 +27,20 @@ public class Create{{meta.domainUp}}UseCase extends AbstractCreateUseCase<{{meta
         {{meta.domainUp}}Entity {{meta.domainLow}}Entity = new {{meta.domainUp}}Entity(idGenerator.generate());
        
         {{#entity.fields}}
-        {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.{{name}});
+        {{^innerClass}}
+        {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.{{name}});;
+        {{/innerClass}}
         {{/entity.fields}}
+        {{#entity.innerClases}}
+
+        {{meta.domainLow}}Entity.set{{name}}({{meta.domainUp}}Entity.{{name}}
+                .builder()
+                {{#fields}}
+                .{{name}}(inputValues.{{var}}.{{name}})
+                {{/fields}}
+                .build()
+        );
+        {{/entity.innerClases}}
 
         {{meta.domainLow}}Entity = repository.save({{meta.domainLow}}Entity);
 
@@ -41,20 +53,10 @@ public class Create{{meta.domainUp}}UseCase extends AbstractCreateUseCase<{{meta
     @Data
     public static class InputValues implements UseCase.InputValues {
         {{#entity.fields}}
-        {{#innerClass}}
-        /**
-        * {{description}} 
-        */
-        {{accessModifier}} {{meta.domainUp}}Entity.{{type}} {{name}};
-        {{/innerClass}}
-
-        {{^innerClass}}
         /**
         * {{description}} 
         */
         {{accessModifier}} {{type}} {{name}};
-        {{/innerClass}}
         {{/entity.fields}}
-
     }
 }

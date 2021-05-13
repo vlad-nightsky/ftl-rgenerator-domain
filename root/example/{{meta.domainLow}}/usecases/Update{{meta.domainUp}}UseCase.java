@@ -2,10 +2,7 @@ package {{meta.package}}.domain.{{meta.domainLow}}.usecases;
 
 import com.rcore.domain.commons.usecase.UseCase;
 import com.rcore.domain.commons.usecase.model.SingletonEntityOutputValues;
-import lombok.Builder;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 import {{meta.package}}.domain.{{meta.domainLow}}.entity.{{meta.domainUp}}Entity;
 import {{meta.package}}.domain.{{meta.domainLow}}.exceptions.{{meta.domainUp}}NotFoundException;
 import {{meta.package}}.domain.{{meta.domainLow}}.exceptions.{{meta.domainUp}}ParamMissingException;
@@ -31,8 +28,20 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
                 .orElseThrow({{meta.domainUp}}NotFoundException::new);
 
         {{#entity.fields}}
-        {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.{{name}});
+        {{^innerClass}}
+        {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.{{name}});;
+        {{/innerClass}}
         {{/entity.fields}}
+        {{#entity.innerClases}}
+
+        {{meta.domainLow}}Entity.set{{name}}({{meta.domainUp}}Entity.{{name}}
+                .builder()
+                {{#fields}}
+                .{{name}}(inputValues.{{var}}.{{name}})
+                {{/fields}}
+                .build()
+        );
+        {{/entity.innerClases}}
         
         {{meta.domainLow}}Entity = {{meta.domainLow}}Repository.save({{meta.domainLow}}Entity);
 
@@ -47,19 +56,10 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
         @NotBlank
         protected String id;
         {{#entity.fields}}
-        {{#innerClass}}
-        /**
-        * {{description}} 
-        */
-        {{accessModifier}} {{meta.domainUp}}Entity.{{type}} {{name}};
-        {{/innerClass}}
-
-        {{^innerClass}}
         /**
         * {{description}} 
         */
         {{accessModifier}} {{type}} {{name}};
-        {{/innerClass}}
         {{/entity.fields}}
        
         @Override
