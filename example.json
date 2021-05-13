@@ -23,7 +23,7 @@
                 "accessModifier": "protected",
                 "description": "Заголовок",
                 "innerClass": false
-            }
+            },
             {
                 "type": "Price",
                 "name": "price",
