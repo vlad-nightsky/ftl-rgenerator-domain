@@ -61,6 +61,21 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
         */
         {{accessModifier}} {{type}} {{name}};
         {{/entity.fields}}
+
+        {{#entity.innerClases}}
+        @AllArgsConstructor(staticName = "of")
+        @NoArgsConstructor(staticName = "empty")
+        @Builder
+        @Data
+        public static class {{name}}{
+            {{#fields}}
+            /**
+            * {{description}} 
+            */
+            {{accessModifier}} {{type}} {{name}};
+            {{/fields}}
+        }
+        {{/entity.innerClases}}
        
         @Override
         public void validate() {
