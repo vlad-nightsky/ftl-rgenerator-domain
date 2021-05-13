@@ -47,7 +47,19 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
         @NotBlank
         protected String id;
         {{#entity.fields}}
+        {{#innerClass}}
+        /**
+        * {{description}} 
+        */
+        {{accessModifier}} {{meta.domainUp}}Entity.{{type}} {{name}};
+        {{/innerClass}}
+
+        {{^innerClass}}
+        /**
+        * {{description}} 
+        */
         {{accessModifier}} {{type}} {{name}};
+        {{/innerClass}}
         {{/entity.fields}}
        
         @Override

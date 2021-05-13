@@ -13,15 +13,46 @@
                 "name": "number",
                 "nameUperCase": "Number",
                 "accessModifier": "protected",
-                "description": "Номер"
+                "description": "Номер",
+                "innerClass": false
             },
             {
                 "type": "String",
                 "name": "title",
                 "nameUperCase": "Title",
                 "accessModifier": "protected",
-                "description": "Заголовок"
+                "description": "Заголовок",
+                "innerClass": false
             }
-        ]
+            {
+                "type": "Price",
+                "name": "price",
+                "nameUperCase": "Price",
+                "accessModifier": "protected",
+                "description": "Цена",
+                "innerClass": true
+            }
+        ],
+        "innerClases": [{
+            "name": "Price",
+            "var": "price",
+            "description": "Цена",
+            "fields": [
+                {
+                    "type": "double",
+                    "name": "discount",
+                    "nameUperCase": "Discount",
+                    "accessModifier": "protected",
+                    "description": "Скидка"
+                },
+                {
+                    "type": "double",
+                    "name": "total",
+                    "nameUperCase": "Total",
+                    "accessModifier": "protected",
+                    "description": "Итого"
+                }
+            ]
+        }]
     }
 }

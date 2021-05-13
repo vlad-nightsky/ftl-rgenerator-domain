@@ -41,7 +41,19 @@ public class Create{{meta.domainUp}}UseCase extends AbstractCreateUseCase<{{meta
     @Data
     public static class InputValues implements UseCase.InputValues {
         {{#entity.fields}}
+        {{#innerClass}}
+        /**
+        * {{description}} 
+        */
+        {{accessModifier}} {{meta.domainUp}}Entity.{{type}} {{name}};
+        {{/innerClass}}
+
+        {{^innerClass}}
+        /**
+        * {{description}} 
+        */
         {{accessModifier}} {{type}} {{name}};
+        {{/innerClass}}
         {{/entity.fields}}
 
     }
