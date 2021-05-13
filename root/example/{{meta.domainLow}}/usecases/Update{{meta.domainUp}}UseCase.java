@@ -29,7 +29,7 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
 
         {{#entity.fields}}
         {{^innerClass}}
-        {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.{{name}});;
+        {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.{{name}});
         {{/innerClass}}
         {{/entity.fields}}
         {{#entity.innerClases}}

@@ -28,7 +28,7 @@ public class Create{{meta.domainUp}}UseCase extends AbstractCreateUseCase<{{meta
        
         {{#entity.fields}}
         {{^innerClass}}
-        {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.{{name}});;
+        {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.{{name}});
         {{/innerClass}}
         {{/entity.fields}}
         {{#entity.innerClases}}
