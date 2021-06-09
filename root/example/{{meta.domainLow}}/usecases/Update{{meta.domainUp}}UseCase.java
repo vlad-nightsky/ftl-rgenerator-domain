@@ -63,6 +63,7 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
         {{/entity.fields}}
 
         {{#entity.innerClases}}
+
         @AllArgsConstructor(staticName = "of")
         @NoArgsConstructor(staticName = "empty")
         @Builder
@@ -76,7 +77,7 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
             {{/fields}}
         }
         {{/entity.innerClases}}
-       
+
         @Override
         public void validate() {
             List<String> badParams = validator.validate(this).stream().map(error -> error.getPropertyPath().toString()).collect(Collectors.toList());

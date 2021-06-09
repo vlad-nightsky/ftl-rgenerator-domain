@@ -60,6 +60,7 @@ public class Create{{meta.domainUp}}UseCase extends AbstractCreateUseCase<{{meta
         {{/entity.fields}}
 
         {{#entity.innerClases}}
+        
         @AllArgsConstructor(staticName = "of")
         @NoArgsConstructor(staticName = "empty")
         @Builder

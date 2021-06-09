@@ -28,6 +28,7 @@ public class {{meta.domainUp}}Entity extends BaseEntity<String> {
     }
 
     {{#entity.innerClases}}
+    
     @Builder
     @Getter
     @Setter
