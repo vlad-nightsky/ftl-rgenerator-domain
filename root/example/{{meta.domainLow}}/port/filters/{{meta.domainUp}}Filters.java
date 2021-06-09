@@ -8,6 +8,7 @@ import lombok.experimental.SuperBuilder;
 
 @AllArgsConstructor
 @SuperBuilder
-@Data
+@Getter
+@Setter
 public class {{meta.domainUp}}Filters extends SearchFilters {
 }
