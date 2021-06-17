@@ -1,12 +1,23 @@
 package {{meta.package}}.domain.{{meta.domainLow}}.exceptions;
 
-public class {{meta.domainUp}}NotFoundException extends {{meta.domainUp}}DomainException {
+import com.rcore.domain.commons.exception.NotFoundDomainException;
+import ru.foodtechlab.sandbox.service.domain.Domain;
+
+public class {{meta.domainUp}}NotFoundException extends NotFoundDomainException {
 
     public {{meta.domainUp}}NotFoundException() {
-        super("{{meta.domainUp}} not found");
+        super(
+            Domain.CATALOG.name(),
+            CategoryErrorReason.NOT_FOUND.name(),
+            "{{meta.domainUp}} not found"
+        );
     }
 
     public {{meta.domainUp}}NotFoundException(String id) {
-        super("{{meta.domainUp}} not found by ID: " + id);
+        super(
+            Domain.CATALOG.name(),
+            CategoryErrorReason.NOT_FOUND.name(),
+            "{{meta.domainUp}} not found by ID: " + id
+        );
     }
 }

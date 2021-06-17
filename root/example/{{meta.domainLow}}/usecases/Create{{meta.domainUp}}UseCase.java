@@ -25,7 +25,7 @@ public class Create{{meta.domainUp}}UseCase extends AbstractCreateUseCase<{{meta
     public SingletonEntityOutputValues<{{meta.domainUp}}Entity> execute(InputValues inputValues) {
 
         {{meta.domainUp}}Entity {{meta.domainLow}}Entity = new {{meta.domainUp}}Entity(idGenerator.generate());
-       
+
         {{#entity.fields}}
         {{^innerClass}}
         {{meta.domainLow}}Entity.set{{nameUperCase}}(inputValues.{{name}});

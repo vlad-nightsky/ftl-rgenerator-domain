@@ -12,7 +12,6 @@ import javax.validation.constraints.NotBlank;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
 /**
  * Обновление сущности
  */
@@ -23,7 +22,6 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
 
     @Override
     public SingletonEntityOutputValues<{{meta.domainUp}}Entity> execute(InputValues inputValues) {
-
         {{meta.domainUp}}Entity {{meta.domainLow}}Entity = {{meta.domainLow}}Repository.findById(inputValues.getId())
                 .orElseThrow({{meta.domainUp}}NotFoundException::new);
 
@@ -77,13 +75,5 @@ public class Update{{meta.domainUp}}UseCase extends UseCase<Update{{meta.domainU
             {{/fields}}
         }
         {{/entity.innerClases}}
-
-        @Override
-        public void validate() {
-            List<String> badParams = validator.validate(this).stream().map(error -> error.getPropertyPath().toString()).collect(Collectors.toList());
-
-            if (!badParams.isEmpty())
-                throw new {{meta.domainUp}}ParamMissingException(badParams);
-        } 
     }
 }
