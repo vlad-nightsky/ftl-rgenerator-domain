@@ -5,12 +5,9 @@ import com.rcore.domain.commons.usecase.model.SingletonEntityOutputValues;
 import lombok.*;
 import {{meta.package}}.domain.{{meta.domainLow}}.entity.{{meta.domainUp}}Entity;
 import {{meta.package}}.domain.{{meta.domainLow}}.exceptions.{{meta.domainUp}}NotFoundException;
-import {{meta.package}}.domain.{{meta.domainLow}}.exceptions.{{meta.domainUp}}ParamMissingException;
 import {{meta.package}}.domain.{{meta.domainLow}}.port.{{meta.domainUp}}Repository;
 
 import javax.validation.constraints.NotBlank;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Обновление сущности
