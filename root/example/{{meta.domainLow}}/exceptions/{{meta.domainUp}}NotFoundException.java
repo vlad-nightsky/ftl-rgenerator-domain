@@ -1,7 +1,6 @@
 package {{meta.package}}.domain.{{meta.domainLow}}.exceptions;
 
 import com.rcore.domain.commons.exception.NotFoundDomainException;
-import ru.foodtechlab.sandbox.service.domain.Domain;
 
 public class {{meta.domainUp}}NotFoundException extends NotFoundDomainException {
 
